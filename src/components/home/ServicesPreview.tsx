@@ -1,8 +1,11 @@
 import Link from 'next/link'
-import { Target, Settings, Zap, TrendingUp, Users, Shield, ArrowRight } from 'lucide-react'
+import { Target, Settings, Zap, TrendingUp, Users, Shield, ArrowRight, type LucideProps } from 'lucide-react'
 import { services } from '@/data/services'
+import type { ForwardRefExoticComponent, RefAttributes } from 'react'
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+type LucideIcon = ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>>
+
+const iconMap: Record<string, LucideIcon> = {
   Target,
   Settings,
   Zap,

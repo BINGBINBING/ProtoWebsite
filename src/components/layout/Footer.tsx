@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Linkedin, Wechat, Youtube } from 'lucide-react'
+import { Phone, Mail, MapPin, Linkedin, MessageCircle, Youtube } from 'lucide-react'
 
 const footerLinks = {
   services: [

@@ -1,14 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Target, Settings, Zap, TrendingUp, Users, Shield, CheckCircle, ArrowRight, Clock, DollarSign } from 'lucide-react'
+import { Target, Settings, Zap, TrendingUp, Users, Shield, CheckCircle, ArrowRight, Clock, DollarSign, type LucideProps } from 'lucide-react'
 import { services } from '@/data/services'
+import type { ForwardRefExoticComponent, RefAttributes } from 'react'
 
 export const metadata: Metadata = {
   title: '咨询服务',
   description: '智云咨询提供战略规划、管理效能、数字化转型、财务顾问、人才发展、合规风控等全方位企业管理咨询服务。',
 }
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+type LucideIcon = ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>>
+
+const iconMap: Record<string, LucideIcon> = {
   Target,
   Settings,
   Zap,
