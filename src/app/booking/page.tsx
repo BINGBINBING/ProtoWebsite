@@ -118,7 +118,7 @@ export default function BookingPage() {
                 ))}
               </div>
               <p className="text-sm text-gray-600 italic leading-relaxed mb-3">
-                "仅仅一次免费咨询，就帮我们厘清了困扰多年的战略方向问题。团队非常专业，完全超出预期。"
+                &ldquo;仅仅一次免费咨询，就帮我们厘清了困扰多年的战略方向问题。团队非常专业，完全超出预期。&rdquo;
               </p>
               <p className="text-xs font-semibold text-gray-700">— 李总，某科技公司 CEO</p>
             </div>

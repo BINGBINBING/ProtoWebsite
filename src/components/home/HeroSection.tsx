@@ -1,5 +1,8 @@
+"use client"
+
 import Link from 'next/link'
-import { ArrowRight, Play, CheckCircle } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowRight, CheckCircle, MessageSquare, X } from 'lucide-react'
 
 const highlights = [
   '15 年行业深耕',
@@ -9,6 +12,8 @@ const highlights = [
 ]
 
 export default function HeroSection() {
+  const [showTestimonial, setShowTestimonial] = useState(true)
+
   return (
     <section className="relative min-h-screen bg-mesh flex items-center overflow-hidden">
       {/* Background pattern */}
@@ -93,20 +98,39 @@ export default function HeroSection() {
               </div>
 
               {/* Floating testimonial */}
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl max-w-56">
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-blue-400 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                    王
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-gray-900">王总</p>
-                    <p className="text-xs text-gray-500 mb-1.5">某科技公司 CEO</p>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      "智云团队的战略建议让公司营收提升了 40%"
-                    </p>
+              {showTestimonial ? (
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl max-w-56 transition-all duration-300">
+                  <button
+                    type="button"
+                    aria-label="关闭客户评价"
+                    onClick={() => setShowTestimonial(false)}
+                    className="absolute top-2 right-2 h-6 w-6 rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors flex items-center justify-center"
+                  >
+                    <X size={14} />
+                  </button>
+                  <div className="flex items-start gap-3 pr-4">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-blue-400 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                      王
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-gray-900">王总</p>
+                      <p className="text-xs text-gray-500 mb-1.5">某科技公司 CEO</p>
+                      <p className="text-xs text-gray-600 leading-relaxed">
+                        &ldquo;智云团队的战略建议让公司营收提升了 40%&rdquo;
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setShowTestimonial(true)}
+                  className="absolute -bottom-4 -right-2 bg-white/95 border border-gray-200 rounded-full px-3 py-2 shadow-lg hover:shadow-xl transition-all text-xs text-gray-700 flex items-center gap-1.5"
+                >
+                  <MessageSquare size={14} className="text-primary-600" />
+                  客户评价
+                </button>
+              )}
             </div>
           </div>
         </div>
