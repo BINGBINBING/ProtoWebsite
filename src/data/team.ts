@@ -1,0 +1,73 @@
+import type { TeamMember } from '@/types'
+
+export const teamMembers: TeamMember[] = [
+  {
+    id: 'ceo',
+    name: '陈志远',
+    title: '创始人 & CEO',
+    department: '管理层',
+    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face',
+    bio: '前麦肯锡合伙人，拥有 20 年企业管理咨询经验，服务客户覆盖制造业、科技、金融和零售等多个行业。北京大学经济学学士，清华大学 MBA。',
+    expertise: ['战略规划', '企业变革', '资本运作', '数字化转型'],
+    linkedin: '#',
+    email: 'ceo@zhiyun.com',
+  },
+  {
+    id: 'coo',
+    name: '林晓华',
+    title: '联合创始人 & COO',
+    department: '管理层',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face',
+    bio: '20 年企业运营管理经验，曾任职于多家跨国公司高管职位。专注于组织效能提升和卓越运营体系建设。复旦大学管理学博士。',
+    expertise: ['运营管理', '组织设计', '流程优化', '绩效管理'],
+    linkedin: '#',
+    email: 'coo@zhiyun.com',
+  },
+  {
+    id: 'partner-strategy',
+    name: '张伟',
+    title: '合伙人 - 战略业务',
+    department: '战略咨询部',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
+    bio: '15 年战略咨询经验，专注于科技和消费行业的战略规划与市场拓展，曾主导超过 30 个大型战略项目交付。',
+    expertise: ['市场战略', '竞争分析', '增长策略', '跨境业务'],
+    linkedin: '#',
+    email: 'zhang.wei@zhiyun.com',
+  },
+  {
+    id: 'partner-digital',
+    name: '李明',
+    title: '合伙人 - 数字化业务',
+    department: '数字化咨询部',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
+    bio: '前阿里巴巴技术总监，深耕企业数字化转型 12 年，尤其擅长 AI 应用落地、电商数字化和供应链智能化。',
+    expertise: ['AI应用', '数据中台', '电商技术', '供应链数字化'],
+    linkedin: '#',
+    email: 'li.ming@zhiyun.com',
+  },
+  {
+    id: 'partner-hr',
+    name: '王芳',
+    title: '合伙人 - 人才业务',
+    department: '人才发展部',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face',
+    bio: 'MBA 毕业于北京大学光华，专注组织变革与人才发展 15 年，服务客户包括多家行业领军企业，著有《高效能组织》。',
+    expertise: ['人才战略', '领导力发展', '组织文化', '变革管理'],
+    linkedin: '#',
+    email: 'wang.fang@zhiyun.com',
+  },
+  {
+    id: 'partner-finance',
+    name: '刘洋',
+    title: '合伙人 - 财务咨询',
+    department: '财务咨询部',
+    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face',
+    bio: '注册会计师，前四大会计师事务所高级经理，专注企业财务管控与融资咨询 13 年，主导过超过 20 个 IPO 相关财务咨询项目。',
+    expertise: ['财务管控', '融资咨询', '并购尽调', '税务筹划'],
+    linkedin: '#',
+    email: 'liu.yang@zhiyun.com',
+  },
+]
+
+export const getTeamMemberById = (id: string): TeamMember | undefined =>
+  teamMembers.find((m) => m.id === id)
